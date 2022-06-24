@@ -1,6 +1,7 @@
 ---
   - name: Print os facts
     hosts: all
+    connection: docker
     tasks:
       - name: Print OS
         debug:

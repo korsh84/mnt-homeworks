@@ -1,0 +1,30 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: deploy el container
+      docker_container:
+        image: centos:7
+        name: centos7
+        state: started
+        auto_remove: false
+        network_mode: host
+        tty: true
+    - name: deploy deb container
+      docker_container:
+        image: python:3-alpine
+        name: ubuntu
+        state: started
+        auto_remove: false
+        network_mode: host
+        tty: true
+    - name: deploy fedora container
+      docker_container:
+        image: pycontribs/fedora
+        name: fedora
+        state: started
+        auto_remove: false
+        network_mode: host
+        tty: true
+
+
