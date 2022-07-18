@@ -1,6 +1,11 @@
 ---
-elasticsearch:
-  hosts:
-    localhost:
-      ansible_connection: ssh
-      ansible_user: root
+  elasticsearch:
+    hosts:
+      elastic-docker:
+        ansible_connection: docker
+        become: false
+  local:
+    hosts:
+      localhost:
+        ansible_connection: local
+        become: true

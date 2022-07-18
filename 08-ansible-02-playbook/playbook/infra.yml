@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: deploy elastic host
+      docker_container:
+        image: centos:7
+        name: elastic-docker
+        state: started
+        auto_remove: true
+        network_mode: host
+        tty: true
+
